@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ onPlanTrip }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -68,11 +68,11 @@ const Navbar = () => {
           </button>
 
           {/* CTA */}
-          <Link href="/plan">
-            <button className="border border-[#C9A84C]/50 text-[#C9A84C] px-5 py-2 text-[11px] font-medium tracking-[0.12em] uppercase transition-all duration-300 hover:bg-[#C9A84C] hover:text-[#0F0D0B] hover:border-[#C9A84C]">
+          
+            <button onClick={onPlanTrip} className="border border-[#C9A84C]/50 text-[#C9A84C] px-5 py-2 text-[11px] font-medium tracking-[0.12em] uppercase transition-all duration-300 hover:bg-[#C9A84C] hover:text-[#0F0D0B] hover:border-[#C9A84C]">
               Plan Trip
             </button>
-          </Link>
+          
         </div>
 
         {/* Mobile hamburger */}
@@ -108,11 +108,11 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="mt-12">
-          <Link href="/plan" onClick={() => setMenuOpen(false)}>
-            <button className="border border-[#C9A84C]/50 text-[#C9A84C] px-8 py-3 text-[11px] tracking-[0.15em] uppercase hover:bg-[#C9A84C] hover:text-[#0F0D0B] transition-all">
+         
+            <button onClick={onPlanTrip} className="border border-[#C9A84C]/50 text-[#C9A84C] px-8 py-3 text-[11px] tracking-[0.15em] uppercase hover:bg-[#C9A84C] hover:text-[#0F0D0B] transition-all">
               Plan My Trip
             </button>
-          </Link>
+          
         </div>
       </div>
     </>

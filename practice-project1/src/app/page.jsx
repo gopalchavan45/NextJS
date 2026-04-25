@@ -2,7 +2,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useState } from "react"; 
+import PlanTrip from "@/components/PlanTrip"; 
 const destinations = [
   {
     name: "Santorini",
@@ -38,8 +39,10 @@ const destinations = [
 ];
 
 export default function HomePage() {
+  const [planOpen, setPlanOpen] = useState(false);
   return (
     <main className="bg-[#0F0D0B] text-[#E8DFD0] font-sans mt-11 overflow-x-hidden">
+      <PlanTrip isOpen={planOpen} onClose={() => setPlanOpen(false)} />
       {/* ── HERO ── */}
       <section className="relative h-screen min-h-[600px] flex flex-col justify-end p-12 overflow-hidden">
         {/* Background layers */}
@@ -79,11 +82,11 @@ export default function HomePage() {
             they seek a feeling.
           </p>
           <div className="mt-10 flex gap-4 flex-wrap">
-            <Link href="/destinations">
-              <button className="bg-[#C9A84C] text-[#0F0D0B] px-8 py-4 text-[13px] font-medium tracking-widest uppercase hover:bg-[#d4b56a] hover:-translate-y-0.5 transition-all">
+            
+              <button onClick={() => setPlanOpen(true)} className="bg-[#C9A84C] text-[#0F0D0B] px-8 py-4 text-[13px] font-medium tracking-widest uppercase hover:bg-[#d4b56a] hover:-translate-y-0.5 transition-all">
                 Explore Journeys
               </button>
-            </Link>
+            
             <button className="border border-[#E8DFD0]/40 text-[#E8DFD0] px-8 py-4 text-[13px] font-light tracking-widest uppercase hover:border-[#E8DFD0] hover:bg-[#E8DFD0]/5 transition-all">
               Watch Film
             </button>
@@ -271,11 +274,11 @@ export default function HomePage() {
             Talk to a travel specialist and get a bespoke itinerary — no
             obligations, no rush.
           </p>
-          <Link href="/contact">
-            <button className="bg-[#C9A84C] text-[#0F0D0B] px-10 py-4 text-[13px] font-medium tracking-widest uppercase hover:bg-[#d4b56a] hover:-translate-y-0.5 transition-all">
+         
+            <button onClick={() => setPlanOpen(true)} className="bg-[#C9A84C] text-[#0F0D0B] px-10 py-4 text-[13px] font-medium tracking-widest uppercase hover:bg-[#d4b56a] hover:-translate-y-0.5 transition-all">
               Plan My Journey →
             </button>
-          </Link>
+        
         </div>
       </section>
 

@@ -111,13 +111,59 @@
 // }
 
 
-type a={
-    a:number
-}
+// type a={
+//     a:number
+// }
 
-type b={
-    b:string
-}
+// type b={
+//     b:string
+// }
 
-type ab=a&b;
+// type ab=a&b;
 
+//Interface
+
+// interface A{
+//     a:number
+// }
+
+// interface b extends A{
+//     b:string
+// }
+
+// let Obj:b={
+//     a:90,
+//     b:"Gopal"
+// }
+
+//Generics 
+
+// function hello (a,b){
+
+// }
+// hello(2,"5")
+
+// function hello<T>(a:T,b:string):T{
+//     return a
+// }
+
+// hello(22,"$")//Argument of type '"$"' is not assignable to parameter of type '22'.
+// hello<number>(22,"goap")
+
+// interface user<T>{
+//     numa:string,
+//     age:T
+// }
+
+// let gopal:user<number>={
+//     numa:"ayush",
+//     age:21
+// }
+
+// let a:user={
+//     name:"g"
+// }//global type declare already
+
+// let a:gopal;
+// a=22
+// a="df"
